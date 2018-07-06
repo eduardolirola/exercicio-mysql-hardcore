@@ -25,9 +25,9 @@ DROP TABLE IF EXISTS `likes`;
 CREATE TABLE `likes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `likes` int(11) DEFAULT NULL,
-  `datalike` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `pessoas_id` int(11) NOT NULL,
   `postagens_id` int(11) NOT NULL,
+  `datalike` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fk_likes_pessoas1_idx` (`pessoas_id`),
   KEY `fk_likes_postagens1_idx` (`postagens_id`),
@@ -42,7 +42,7 @@ CREATE TABLE `likes` (
 
 LOCK TABLES `likes` WRITE;
 /*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-INSERT INTO `likes` VALUES (1,1,'2018-07-06 15:05:04',1,1),(2,1,'2018-07-06 15:06:04',3,1),(3,1,'2018-07-06 15:08:04',4,1),(4,1,'2018-07-06 16:26:04',1,2),(5,1,'2018-07-06 16:38:04',2,2),(6,1,'2018-07-06 16:48:04',4,2);
+INSERT INTO `likes` VALUES (1,1,1,1,'2018-07-06 15:05:04'),(2,1,3,1,'2018-07-06 15:06:04'),(3,1,4,1,'2018-07-06 15:08:04'),(4,1,1,2,'2018-07-06 16:26:04'),(5,1,2,2,'2018-07-06 16:38:04'),(6,1,4,2,'2018-07-06 16:48:04');
 /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-06 12:12:43
+-- Dump completed on 2018-07-06 20:03:46

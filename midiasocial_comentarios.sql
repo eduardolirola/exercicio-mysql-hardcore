@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `comentarios`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comentarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `conteudo` varchar(50) DEFAULT NULL,
+  `comentario` varchar(50) DEFAULT NULL,
   `pessoas_id` int(11) NOT NULL,
   `postagens_id` int(11) NOT NULL,
   `datacomentario` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-06 12:12:43
+-- Dump completed on 2018-07-06 20:03:46

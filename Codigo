@@ -135,3 +135,29 @@ INSERT INTO compartilhamentos VALUES
 ('4','Não acredito que errei este placar ','2018-07-06 14:25:04','2','2');
 
 select * from compartilhamentos;
+
+ALTER TABLE `midiasocial`.`postagens` 
+CHANGE COLUMN `conteudo` `postagen` VARCHAR(90) NULL DEFAULT NULL ;
+
+ALTER TABLE `midiasocial`.`comentarios` 
+CHANGE COLUMN `conteudo` `comentario` VARCHAR(50) NULL DEFAULT NULL ;
+
+ALTER TABLE `midiasocial`.`compartilhamentos` 
+CHANGE COLUMN `conteudo` `compartilhamento` VARCHAR(45) NULL DEFAULT NULL ;
+
+select * from postagens;
+
+select pessoas.nome, postagens.postagem, likes.likes, comentarios.comentario, compartilhamentos.compartilhamento
+from pessoas join postagens join likes join comentarios join compartilhamentos
+
+on pessoas.id = postagens.pessoas_id = likes.pessoas_id = comentarios.pessoas_id = compartilhamentos.pessoas_id
+order by pessoas.nome;
+
+select pessoas.nome, postagens.postagem, likes.likes, comentarios.comentario, compartilhamentos.compartilhamento
+from pessoas join postagens join likes join comentarios join compartilhamentos
+
+on pessoas.id = postagens.pessoas_id = likes.pessoas_id = comentarios.postagens_id = compartilhamentos.postagens_id
+order by pessoas.nome;
+
+
+

@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `compartilhamentos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `compartilhamentos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `conteudo` varchar(45) DEFAULT NULL,
+  `compartilhamento` varchar(45) DEFAULT NULL,
   `datacompartilhamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `pessoas_id` int(11) NOT NULL,
   `postagens_id` int(11) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `compartilhamentos` (
   KEY `fk_compartilhamentos_postagens1_idx` (`postagens_id`),
   CONSTRAINT `fk_compartilhamentos_pessoas` FOREIGN KEY (`pessoas_id`) REFERENCES `pessoas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_compartilhamentos_postagens1` FOREIGN KEY (`postagens_id`) REFERENCES `postagens` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `compartilhamentos` (
 
 LOCK TABLES `compartilhamentos` WRITE;
 /*!40000 ALTER TABLE `compartilhamentos` DISABLE KEYS */;
+INSERT INTO `compartilhamentos` VALUES (1,'Iai meus amigos voces também gosta','2018-07-06 17:25:04',3,1),(2,'EU GOSTO MUITO E VOCES ?','2018-07-06 17:25:04',4,1),(3,'Olha so estes chutes kkk','2018-07-07 14:25:04',1,2),(4,'Não acredito que errei este placar ','2018-07-06 17:25:04',2,2);
 /*!40000 ALTER TABLE `compartilhamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-06 12:12:43
+-- Dump completed on 2018-07-06 20:03:46
